@@ -40,12 +40,12 @@
       var gtotal = Number(granan)
       var custo = Number(arrozn + feijaon + macarraon + saln)
       var troco = Number(gtotal - custo)
-      if(troco <= arrozn + feijaon + macarraon + saln){
-        saldo.innerHTML = `SALDO INSUFICIENTE${granan}`
+      if(troco < 0){
+        saldo.innerHTML = `Saldo insuficiente, você só tem R$${granan},00 .`
       }
       else{
-        saldo.innerHTML = `O custo das compras será de R$${custo}, e o meu troco 
-      será de R$${troco}.`
+        saldo.innerHTML = `O custo das compras será de R$${custo},00 , e o meu troco 
+      será de R$${troco},00 .`
       }
 
 
@@ -55,4 +55,4 @@
   </script>
 
 </body>
-</html> 
+</html>
