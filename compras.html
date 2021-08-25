@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>LISTA DE COMPRAS</h1>
+
+  Arroz R$  <input type="number" name="vl1" id="vl1" > 
+  <br>
+  Feijão R$ <input type="number" name="vl2" id="vl2">
+  <br>
+  Macarrão R$ <input type="number" name="vl3" id="vl3">
+  <br>
+  Sal R$ <input type="number" name="vl4" id="vl4">
+  <br>
+  Eu tenho <input type="number" name="grana" id="grana">
+  <input type="button" value="comprar" onclick="saldo()">
+
+  <div id="saldofinal"></div>
+
+  <script>
+    function saldo(){
+      var arroz = document.querySelector('input#vl1')
+      var feijao = document.querySelector('input#vl2')
+      var macarrao = document.querySelector('input#vl3')
+      var sal = document.querySelector('input#vl4')
+      var grana = document.querySelector('input#grana')
+      var saldo = document.querySelector('div#saldofinal')
+      
+      var arrozn = Number(arroz.value)
+      var feijaon = Number(feijao.value)
+      var macarraon = Number(macarrao.value)
+      var saln = Number(sal.value)
+      var granan = Number(grana.value)
+      var gtotal = Number(granan)
+      var custo = Number(arrozn + feijaon + macarraon + saln)
+      var troco = Number(gtotal - custo)
+      if(troco <= arrozn + feijaon + macarraon + saln){
+        saldo.innerHTML = `SALDO INSUFICIENTE${granan}`
+      }
+      else{
+        saldo.innerHTML = `O custo das compras será de R$${custo}, e o meu troco 
+      será de R$${troco}.`
+      }
+
+
+
+    }
+
+  </script>
+
+</body>
+</html>
