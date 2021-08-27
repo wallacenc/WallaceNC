@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="30" />
+  <title>Gerenciamento</title>
+  
+</head>
+  <style type="text/css">
+  h1{
+    font-size: 40px;
+    color: rgb(70, 142, 236);
+    text-shadow: rgba(38, 53, 82, 0.712) 2px 2px 2px;
+  }
+  h2{
+        font-size: 40px;
+    color: rgb(30, 144, 255);
+    text-shadow: rgba(38, 53, 82, 0.712) 2px 2px 2px;
+  }
+  h3{
+    font-size: 40px;
+    color: rgb(30, 144, 255);
+    text-shadow: rgba(0px, 10px, 0px, 1px);
+    text-shadow: rgba(38, 53, 82, 0.712) 2px 2px 2px;
+  }
+ 
+    body{
+      text-align: center;
+      font: normal 10pt fira code;
+      background-image: linear-gradient(to right, rgb(70, 142, 236), rgba(56, 117, 197, 0.233));
+    } 
+nav a {
+            background-image: linear-gradient(to right,rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+            width: 100%;
+            padding: 15px;
+            color: rgb(0, 0, 0);
+            font-size: 15px;
+            border-radius: 10px;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0,0.080);
+            border-width: medium;
+            border-color: black;
+            
+}
+master{
+background-image: linear-gradient(to right,rgb(18, 84, 172), rgba(70, 142, 236, 1));
+}
+  .titulo{
+
+    margin-top: -8%;
+  }
+  .atalhos{
+    
+    margin-top: 10%;
+  }
+  .outros{
+    margin-top: 10%
+  }
+  .tabela{
+    float: right;
+    width: 30%;
+    margin-right: 100px;
+
+  }
+  .fundo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    padding: 70px;
+    transform: translate(-50%,-70%);
+    background-color: rgb(255, 255, 255);
+    border-color: rgba(255, 255, 255, 0.1);
+    border-width: 2px;
+    border-radius: 20px;
+    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  .fundo2{
+    position: initial;
+    margin:auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0px;
+    border-radius: 15px;
+    width: 30%;
+    height: 10%;
+    border-color: rgba(0, 0, 0, 0.0);
+  }
+  .fundo3{
+    position: initial;
+    margin:auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0px;
+    border-radius: 15px;
+    width: 40%;
+    height: 10%;
+    border-color: rgba(0, 0, 0, 0.0);
+  }
+  .bot{
+    color: rgba(49, 1, 1, 0.3);
+    position:absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate( -50%);
+  }
+  .hora{
+    font-size: 20px;
+    color: rgba(20, 0, 43, 0.8);
+    margin-top: 35px;
+    font-weight: 600;
+  }
+  .data{
+    font-size: 20px;
+    color: rgba(20, 0, 43, 0.8);
+    margin-top: 20px;
+    font-weight: 600;
+  }
+
+  </style>
+<body onload="carregar()">
+  
+<div class="data" id="msg2"></div>
+<div class="hora" id="msg">Hora aqui</div>
+
+  <fieldset class="fundo">
+<h1 class="titulo">  <fieldset class="fundo2">PASTAS</fieldset></h1>
+<nav role='navigation'>
+<a id="bot01" class="bt01" onmouseenter="entrar()" onmouseout="sair()" href="V:\COMPARTILHADO_CSC-GP_GPAP_GPBO\NP-1\16.UTILIDADES\06 - CheckList\Imboassica\2021" target="_blank">CHECKLIST'S NA REDE</a>
+<a id="bot02" onmouseenter="entrarb2()" onmouseout="sairb2()" href="V:\COMPARTILHADO_CSC-GP_GPAP_GPBO\NP-1\16.UTILIDADES\01- Utilidades\02- Processo Operação\03- Boletins de Operação" target="_blank">BOLETIM DE OPERAÇÃO</a>
+<a id="bot03" onmouseenter="entrarb3()" onmouseout="sairb3()"href="V:\COMPARTILHADO_CSC-GP_GPAP_GPBO\NP-1\PASTA OPERADOR\Pasta dos Operadores Imboassica\Checklist\2021\Imboassica">INSPEÇÕES</a>
+</nav>
+
+
+<h2 class="atalhos"><fieldset class="fundo3"> SISTEMAS</fieldset></h2>
+<nav role="navigation">
+<a id="bot04" onmouseenter="entrarb4()" onmouseout="sairb4()" href="https://appvirtual.petrobras.com.br/Citrix/AppVirtualWeb/" target="_blank">APLAT</a>
+<a id="bot05" onmouseenter="entrarb5()" onmouseout="sairb5()" href="http://npaa0941:8080/ScadaBR/login.htm" target="_blank">SCADA</a>
+<a id="bot06" onmouseenter="entrarb6()" onmouseout="sairb6()" href="http://sbcas202/db/IMBOASSICAE/Telas/Principal" target="_blank">PLANTECH</a>
+<a id="bot07" onmouseenter="entrarb7()" onmouseout="sairb7()" href="#" onclick="executar();">OUTLOOK</a>
+</nav>
+
+<h3 class="outros"><fieldset class="fundo3">OUTROS</fieldset></h3>
+<nav role="navigation">
+<a id="bot08" onmouseenter="entrarb8()" onmouseout="sairb8()" href="#" onclick="executarAntiss();">ANTISS</a>
+</nav>
+</fieldset>
+
+
+<script>
+
+  function carregar(){
+  var msg = window.document.getElementById('msg')
+  var msg2 = window.document.getElementById('msg2')
+  var data = new Date()
+  var hora = data.getHours()
+  var minuto = data.getMinutes('00:00')
+  var dia = data.getDay()
+  var dataFormatada = ((data.getDate() )) + "/" + ((data.getMonth() + 1)) + "/" + data.getFullYear(); 
+  msg.innerHTML = ("Agora são " + hora + ":" + minuto)
+  msg2.innerHTML = ("hoje é "+ dataFormatada + "")
+  
+  if( hora >= 0 && hora <=5){
+    document.body.style.background = 'linear-gradient(to right, rgba(30, 79, 165, 0.7), rgba(70, 142, 236, 1))'
+  }
+  else if( hora >=6 && hora <=11){
+    document.body.style.background = 'linear-gradient(to right,rgba(30, 59, 125, 0.7), rgba(70, 142, 236, 1))'
+  }
+  else if( hora >= 12 && hora <=17 ){
+  document.body.style.background = 'linear-gradient(to right,rgba(30, 39, 105, 0.7), rgba(70, 142, 236, 1))'
+  }
+  else if (hora >= 18 && hora <= 23) {
+    document.body.style.background = 'linear-gradient(to right, rgba(30, 10, 80, 0.7), rgba(70, 142, 236, 1))'
+  }
+
+}
+
+
+
+function entrar(){
+  var b1 = window.document.getElementById('bot01' );
+  b1.style.background = 'linear-gradient(to top, rgb(82, 134, 238), rgb(67, 109, 194))';
+  b1.style.color = ' rgb(255, 255, 255)';
+  b1.style.textShadow ='rgb(38, 53, 82) 0px 0px 3px'
+  }
+
+  function entrarb2(){
+  var b2 = window.document.getElementById('bot02' );
+  b2.style.background = 'linear-gradient(to top, rgb(82, 134, 238), rgb(67, 109, 194))';
+  b2.style.color = ' rgb(255, 255, 255)';
+  b2.style.textShadow ='rgb(38, 53, 82) 2px 3px 5px'
+  
+  }
+  function entrarb3(){
+  var b3 = window.document.getElementById('bot03' );
+  b3.style.background = 'linear-gradient(to top, rgb(82, 134, 238), rgb(67, 109, 194))';
+  b3.style.color = ' rgb(255, 255, 255)';
+  b3.style.textShadow ='rgb(38, 53, 82) 2px 3px 5px'
+  }
+  function entrarb4(){
+  var b4 = window.document.getElementById('bot04' );
+  b4.style.background = 'linear-gradient(to top, rgb(82, 134, 238), rgb(67, 109, 194))';
+  b4.style.color = ' rgb(255, 255, 255)';
+  b4.style.textShadow ='rgb(38, 53, 82) 2px 3px 5px'
+  }
+  function entrarb5(){
+  var b5 = window.document.getElementById('bot05' );
+  b5.style.background = 'linear-gradient(to top, rgb(82, 134, 238), rgb(67, 109, 194))';
+  b5.style.color = ' rgb(255, 255, 255)';
+  b5.style.textShadow ='rgb(38, 53, 82) 2px 3px 5px'
+  }
+  function entrarb6(){
+  var b6 = window.document.getElementById('bot06' );
+  b6.style.background = 'linear-gradient(to top, rgb(82, 134, 238), rgb(67, 109, 194))';
+  b6.style.color = ' rgb(255, 255, 255)';
+  b6.style.textShadow ='rgb(38, 53, 82) 2px 3px 5px'
+  }
+  function entrarb7(){
+  var b7 = window.document.getElementById('bot07' );
+  b7.style.background = 'linear-gradient(to top, rgb(82, 134, 238), rgb(67, 109, 194))';
+  b7.style.color = ' rgb(255, 255, 255)';
+  b7.style.textShadow ='rgb(38, 53, 82) 2px 3px 5px'
+  }
+  function entrarb8(){
+  var b8 = window.document.getElementById('bot08' );
+  b8.style.background = 'linear-gradient(to top, rgb(82, 134, 238), rgb(67, 109, 194))';
+  b8.style.color = ' rgb(255, 255, 255)';
+  b8.style.textShadow ='rgb(38, 53, 82) 2px 3px 5px'
+  }
+
+function sair(){
+  var b1 = window.document.getElementById('bot01' );
+  b1.style.background = 'linear-gradient(to right,rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))';
+  b1.style.color = 'rgb(0, 0, 0)';
+  b1.style.textShadow ='rgb(38, 53, 82) 0px 0px 0px'
+}
+function sairb2(){
+  var b2 = window.document.getElementById('bot02' );
+  b2.style.background = 'linear-gradient(to right,rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))';
+  b2.style.color = 'rgb(0, 0, 0)';
+  b2.style.textShadow ='rgb(38, 53, 82) 0px 0px 0px'
+}
+function sairb3(){
+  var b3 = window.document.getElementById('bot03' );
+  b3.style.background = 'linear-gradient(to right,rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))';
+  b3.style.color = 'rgb(0, 0, 0)';
+  b3.style.textShadow ='rgb(38, 53, 82) 0px 0px 0px'
+}
+function sairb4(){
+  var b4 = window.document.getElementById('bot04' );
+  b4.style.background = 'linear-gradient(to right,rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))';
+  b4.style.color = 'rgb(0, 0, 0)';
+  b4.style.textShadow ='rgb(38, 53, 82) 0px 0px 0px'
+}
+function sairb5(){
+  var b5 = window.document.getElementById('bot05' );
+  b5.style.background = 'linear-gradient(to right,rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))';
+  b5.style.color = 'rgb(0, 0, 0)';
+  b5.style.textShadow ='rgb(38, 53, 82) 0px 0px 0px'
+}
+function sairb6(){
+  var b6 = window.document.getElementById('bot06' );
+  b6.style.background = 'linear-gradient(to right,rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))';
+  b6.style.color = 'rgb(0, 0, 0)';
+  b6.style.textShadow ='rgb(38, 53, 82) 0px 0px 0px'
+}
+function sairb7(){
+  var b7 = window.document.getElementById('bot07' );
+  b7.style.background = 'linear-gradient(to right,rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))';
+  b7.style.color = 'rgb(0, 0, 0)';
+  b7.style.textShadow ='rgb(38, 53, 82) 0px 0px 0px'
+}
+function sairb8(){
+  var b8 = window.document.getElementById('bot08' );
+  b8.style.background = 'linear-gradient(to right,rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))';
+  b8.style.color = 'rgb(0, 0, 0)';
+  b8.style.textShadow ='rgb(38, 53, 82) 0px 0px 0px'
+}
+
+
+
+// INICIO DO SCRIPT DE EXECUÇÃO DE PROGRAMAS DENTRO DA INTRANET \/
+
+  function executar(){ //OUTLOOK
+  var shell = new ActiveXObject( "WScript.shell" );
+  shell.run( 'file:///C:/Program%20Files/Microsoft%20Office/Office16/OUTLOOK.EXE', 1, true );}  
+var close = document.getElementById('close');
+var popup = document.getElementById('popup');
+close.addEventListener("click", function() {
+  popup.style.display = 'none';
+});
+
+
+function executarAntiss(){  //ANTISS
+  var shell = new ActiveXObject( "WScript.shell" );
+  shell.run( 'file:///V:/COMPARTILHADO_CSC-GP_GPAP_GPBO/NP-1/PASTA%20OPERADOR/Pasta%20dos%20Operadores%20Imboassica/Sistema%20integrado%20Normatel/AntiSS.exe', 1, true );}  
+var close = document.getElementById('close');
+var popup = document.getElementById('popup');
+close.addEventListener("click", function() {
+  popup.style.display = 'none';
+});
+// FIM DO SCRIPT DE EXECUÇÃO DE PROGRAMAS DENTRO DA INTRANET /\
+
+</script>
+</fieldset>
+<p class="bot">Wallace Navarro © 2021 - Plataforma de acesso - v1.4.0</p>
+
+ 
+</body>
+</html>
