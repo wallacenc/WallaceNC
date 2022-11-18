@@ -5,6 +5,7 @@
 
 
 - 🌱 Estou estudando JavaScript
+- 🌱 Estou estudando Python
 - 📫 Qualquer coisa pode me contactar no wallacencarvalho@gmail.com
 
 
